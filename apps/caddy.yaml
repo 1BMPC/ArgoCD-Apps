@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: caddy
+  namespace: argocd
+spec:
+  destination:
+    namespace: caddy
+    name: kind
+  project: default
+  source:
+    chart: caddy
+    repoURL: 'https://github.com/1BMPC/ArgoCD-Apps'
+    targetRevision: 00
+    helm:
+      values: |
+        replicaCount:3
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
