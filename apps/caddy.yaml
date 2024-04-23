@@ -10,8 +10,8 @@ spec:
   project: default
   source:
     chart: caddy
-    repoURL: 'https://github.com/1BMPC/ArgoCD-Apps'
-    targetRevision: 00
+    repoURL: https://github.com/1BMPC/ArgoCD-Apps
+    targetRevision: 
     helm:
       values: |
         replicaCount:3
